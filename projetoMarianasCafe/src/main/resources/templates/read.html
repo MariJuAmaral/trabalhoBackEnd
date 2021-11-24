@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Ver Carrinho</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body th:each="item : ${itensCarrinho}">
+    <span th:text="${'ID: ' + item.id}"></span><br>
+    <span th:text="${'Produto: ' + item.produto.nome}"></span><br>
+    <span th:text="${'Preço Unitário: R$ ' + item.produto.preco}"></span><br>
+    <span th:text="${'Qtd: ' + item.quantidade}"></span><br>
+    <span th:text="${'Subtotal: R$ ' + (item.produto.preco * item.quantidade)}"></span><br>
+    <span><a th:href="@{/update(id=${item.id})}">Alterar</a></span><br>
+    <span><a th:href="@{/delete(id=${item.id})}">Remover do Carrinho</a></span><br>
+    <br>
+    <br>
+</body>
+</html>

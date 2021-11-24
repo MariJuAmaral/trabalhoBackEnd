@@ -39,7 +39,6 @@ public class CarrinhoServiceImpl implements CarrinhoService{
     public void updateCarrinhoById(Integer id, Carrinho carrinho) {
 
         Optional<Carrinho> getCarrinho = getCarrinhoById(id);
-        getCarrinho.get().setProdutos(carrinho.getProdutos());
         getCarrinho.get().setSubtotal(carrinho.getSubtotal());
 
         carrinhoRepository.save(carrinho);

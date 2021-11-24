@@ -11,8 +11,6 @@ public class Carrinho {
     private Integer id;
     private Double subtotal;
 
-    @OneToMany(mappedBy="carrinho")
-    private Set<ItemCarrinho> produtos;
 
     public Integer getId() {
         return id;
@@ -30,11 +28,4 @@ public class Carrinho {
         this.subtotal = subtotal;
     }
 
-    public Set<ItemCarrinho> getProdutos() {
-        return produtos;
-    }
-
-    public void setProdutos(Set<ItemCarrinho> produtos) {
-        this.produtos = produtos;
-    }
 }

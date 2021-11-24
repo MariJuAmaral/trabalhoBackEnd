@@ -14,9 +14,6 @@ public class ItemCarrinho {
     @ManyToOne
     @JoinColumn(name="produto_id", nullable=false)
     private Produto produto;
-    @ManyToOne
-    @JoinColumn(name="carrinho_id", nullable=false)
-    private Carrinho carrinho;
 
     public Integer getId() {
         return id;
@@ -50,11 +47,4 @@ public class ItemCarrinho {
         this.produto = produto;
     }
 
-    public Carrinho getCarrinho() {
-        return carrinho;
-    }
-
-    public void setCarrinho(Carrinho carrinho) {
-        this.carrinho = carrinho;
-    }
 }

@@ -1,0 +1,35 @@
+<html>
+
+<head>
+
+  <title>Atualizar Item</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+
+<body>
+<form action="/update" method="POST" modelAttribute="itemCarrinho">
+
+
+
+  Item Carrinho:<br>
+  <input type="text" name="id" th:value="${itemCarrinho.id}" readOnly="true"><br>
+  <br>
+
+  Produto:<br>
+  <input type="text" th:value="${itemCarrinho.produto.nome}" readOnly="true"><br>
+  <br>
+
+  Id Produto:<br>
+  <input type="text" name="produto" th:value="${itemCarrinho.produto.id}" readOnly="true"><br>
+  <br>
+
+  Quantidade:<br>
+  <input type="text" name="quantidade" th:value="${itemCarrinho.quantidade}"><br>
+
+
+  <input type="submit" value="Atualizar">
+
+</form>
+</body>
+</html>

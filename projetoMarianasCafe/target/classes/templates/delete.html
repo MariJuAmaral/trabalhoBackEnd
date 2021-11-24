@@ -1,0 +1,28 @@
+<html>
+
+<head>
+  <title>Remover do Carrinho</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<form action="/delete" method="POST" modelAttribute="itemCarrinho">
+
+  Item do Carrinho:<br>
+  <input type="text" name="id" th:value="${itemCarrinho.id}" readOnly="true"><br>
+  <br>
+
+  Produto:<br>
+  <input type="text" th:value="${itemCarrinho.produto.nome}" readOnly="true"><br>
+  <br>
+
+  Quantidade:<br>
+  <input type="text" name="quantidade" th:value="${itemCarrinho.quantidade}" readOnly="true"><br>
+  <br>
+  <input type="submit" value="Deletar">
+
+</form>
+
+</body>
+
+</html>
