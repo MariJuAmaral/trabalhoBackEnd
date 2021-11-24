@@ -81,76 +81,96 @@
             tornar sua experiência ainda mais completa.
           </h3>
         </div>
-        <div class="flex-2 lado-esquerdo">
-          <div id="icon-container"></div>
-        </div>
-      </div>
+<!--        <div class="flex-2 lado-esquerdo">-->
+<!--          <div id="icon-container"></div>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div id="section2" class="section-2">
-        <div class="slideshow-container">
-          <div class="mySlides fade">
-            <div class="slide-content">
-              <div class="flex-1">
-                <div class="lado-direito">
-                  <h2>Café Black Tucano Premium Blend em grãos 250 g</h2>
-                  <p>
-                    Um blend para clientes especiais apreciadores de uma
-                    deliciosa combinação de cafés de diferentes origens.
-                  </p>
-                </div>
-              </div>
-              <div class="flex-1">
-                <img src="img/produtos/cafe-black-tucano-premium.png" alt="" />
-              </div>
-              <div class="flex-1">
-                <div class="lado-esquerdo">
-                  <p class="preco-anterior">R$ 45,90</p>
-                  <p class="preco-novo">R$ 25,90</p>
-                  <button onclick="adicionaProduto(1)">comprar</button>
-                </div>
-              </div>
-            </div>
-          </div>
+<!--      <div id="section2" class="section-2">-->
+<!--        <div class="slideshow-container">-->
+<!--          <div class="mySlides fade">-->
+<!--            <div class="slide-content">-->
+<!--              <div class="flex-1">-->
+<!--                <div class="lado-direito">-->
+<!--                  <h2>Café Black Tucano Premium Blend em grãos 250 g</h2>-->
+<!--                  <p>-->
+<!--                    Um blend para clientes especiais apreciadores de uma-->
+<!--                    deliciosa combinação de cafés de diferentes origens.-->
+<!--                  </p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="flex-1">-->
+<!--                <img src="img/produtos/cafe-black-tucano-premium.png" alt="" />-->
+<!--              </div>-->
+<!--              <div class="flex-1">-->
+<!--                <div class="lado-esquerdo">-->
+<!--                  <p class="preco-anterior">R$ 45,90</p>-->
+<!--                  <p class="preco-novo">R$ 25,90</p>-->
+<!--                  <button onclick="adicionaProduto(1)">comprar</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
 
-          <div class="mySlides fade">
-            <div class="slide-content">
-              <div class="flex-1">
-                <div class="lado-direito">
-                  <h2>Café Black Tucano Single Origin em grãos 250 g</h2>
-                  <p>
-                    O carro chefe da Black Tucano! Contempla os cafés de origem
-                    única, ou seja cultivados por uma única fazenda ou produtor.
-                  </p>
-                </div>
-              </div>
-              <div class="flex-1">
-                <img
-                  src="img/produtos/cafe-black-tucano-single-origin.png"
-                  alt=""
-                />
-              </div>
-              <div class="flex-1">
-                <div class="lado-esquerdo">
-                  <p class="preco-anterior">R$ 42,90</p>
-                  <p class="preco-novo">R$ 23,90</p>
-                  <button onclick="adicionaProduto(2)">comprar</button>
-                </div>
-              </div>
-            </div>
-          </div>
+<!--          <div class="mySlides fade">-->
+<!--            <div class="slide-content">-->
+<!--              <div class="flex-1">-->
+<!--                <div class="lado-direito">-->
+<!--                  <h2>Café Black Tucano Single Origin em grãos 250 g</h2>-->
+<!--                  <p>-->
+<!--                    O carro chefe da Black Tucano! Contempla os cafés de origem-->
+<!--                    única, ou seja cultivados por uma única fazenda ou produtor.-->
+<!--                  </p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="flex-1">-->
+<!--                <img-->
+<!--                  src="img/produtos/cafe-black-tucano-single-origin.png"-->
+<!--                  alt=""-->
+<!--                />-->
+<!--              </div>-->
+<!--              <div class="flex-1">-->
+<!--                <div class="lado-esquerdo">-->
+<!--                  <p class="preco-anterior">R$ 42,90</p>-->
+<!--                  <p class="preco-novo">R$ 23,90</p>-->
+<!--                  <button onclick="adicionaProduto(2)">comprar</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
 
-          <a class="prev" onclick="plusSlides(-1)">
-            <i class="fas fa-angle-left"></i>
-          </a>
-          <a class="next" onclick="plusSlides(1)">
-            <i class="fas fa-angle-right"></i>
-          </a>
-        </div>
-      </div>
+<!--          <a class="prev" onclick="plusSlides(-1)">-->
+<!--            <i class="fas fa-angle-left"></i>-->
+<!--          </a>-->
+<!--          <a class="next" onclick="plusSlides(1)">-->
+<!--            <i class="fas fa-angle-right"></i>-->
+<!--          </a>-->
+<!--        </div>-->
+<!--      </div>-->
 
       <div id="section3" class="section-3">
         <h1>Conheça nossos produtos</h1>
-        <table id="lista-produtos"></table>
+        <div>
+          <a href="read">Ver Carrinho</a> <br> <br>
+          <table style="width:100%">
+            <tr>
+              <th>ID</td>
+              <th>Nome</td>
+              <th>Descrição</td>
+              <th>Preço</td>
+              <th>Comprar</td>
+            </tr>
+
+            <tr th:each="produto : ${produtos}">
+              <td th:text="${produto.id}"></td>
+              <td th:text="${produto.nome}"></td>
+              <td th:text="${produto.descricao}"></td>
+              <td th:text="${produto.preco}"></td>
+              <td><a th:href="@{/insert(id=${produto.id})}">Comprar</a></td>
+            </tr>
+
+          </table>
+        </div>
       </div>
 
       <div id="section4" class="section-4">
@@ -226,28 +246,6 @@
       </div>
     </div>
   </div>
-
-    <div>
-      <a href="read">Ver Carrinho</a> <br> <br>
-      <table style="width:100%">
-        <tr>
-          <th>ID</td>
-          <th>Nome</td>
-          <th>Descrição</td>
-          <th>Preço</td>
-          <th>Comprar</td>
-        </tr>
-
-        <tr th:each="produto : ${produtos}">
-          <td th:text="${produto.id}"></td>
-          <td th:text="${produto.nome}"></td>
-          <td th:text="${produto.descricao}"></td>
-          <td th:text="${produto.preco}"></td>
-          <td><a th:href="@{/insert(id=${produto.id})}">Comprar</a></td>
-        </tr>
-
-      </table>
-    </div>
 
     <div class="footer">
       <img src="img/logo_1.png" alt="" />
